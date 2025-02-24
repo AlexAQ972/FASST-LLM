@@ -5,6 +5,8 @@ This is a scanner based on ZGrab2.0, enhanced by FASST-LLM. [ZGrab2.0](https://g
 
 FASST-LLM is a Framework for Automated Service Scanning Tool generation using Large Language Models. FASST-LLM fully leverages the powerful capabilities of large language models in processing natural language and generating code.
 
+The complete source code of FASST-LLM is stored in the ```code``` directory. Within this directory, the ```Code Refinement``` subfolder contains both the implementation code for the Code Refinement module and a technical demonstration.
+
 ## New Services
 
 - AMQP1.0
