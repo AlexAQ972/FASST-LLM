@@ -1,0 +1,4 @@
+Please assist me in generating a scanning tool for {service} services.
+
+The tool should meet the following requirements:
+No requirements

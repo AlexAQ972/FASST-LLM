@@ -5,7 +5,19 @@ This is a scanner based on ZGrab2.0, enhanced by FASST-LLM. [ZGrab2.0](https://g
 
 FASST-LLM is a Framework for Automated Service Scanning Tool generation using Large Language Models. FASST-LLM fully leverages the powerful capabilities of large language models in processing natural language and generating code.
 
-The complete source code of FASST-LLM is stored in the ```code``` directory. Within this directory, the ```Code Refinement``` subfolder contains both the implementation code for the Code Refinement module and a technical demonstration.
+## Source Code of FASST-LLM
+
+The entire source code of FASST-LLM resides in the `code` directory. The directory is organized as follows:
+
+-   `Reasoning/`: Contains the implementations for the **Reasoning Module** and **Action Module**.
+-   `Generator/`: Contains the implementation for the **Generation Module**.
+-   `Propagation/`: Contains the implementation for the **Optimization Module**.
+
+### Key Scripts
+
+-   `Reasoning_ST.py`: Implements the reasoning layer of the forward pass, responsible for inferring the Security Target (ST).
+-   `Generation_Code.py`: Implements the generation layer of the forward pass, which generates the source code for the scanning tool.
+-   `Backpropagation.py`: Handles the entire backpropagation process, including loss calculation, gradient computation, and model optimization.
 
 ## New Services
 
@@ -39,8 +51,8 @@ The complete source code of FASST-LLM is stored in the ```code``` directory. Wit
 You can build from source:
 
 ```cmd
-git clone xxx
-cd xxx
+git clone https://github.com/AlexAQ972/FASST-LLM.git
+cd FASST-LLM
 make
 ./zgrab2
 ```

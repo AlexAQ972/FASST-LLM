@@ -1,0 +1,46 @@
+Here are the example codes for the {example_service} scanning plugin of our tool. Please read them carefully before proceeding.
+<Code>
+{example_code}
+</Code>
+
+Now, your task is to implement the scanning plugin for **{service}**, in Golang, using the structure and conventions shown in the example.
+
+# Framework Usage Notes
+Our scanner system is built on top of the **ZGrab** framework. When writing your plugin:
+- The main entry point must be a `Scan` function, which will be called by the framework to execute the scan.
+- The plugin should rely on **existing utility functions** provided by the framework **whenever possible**.
+- **Do NOT use or invent any function or method unless it is clearly shown in the example codes or documented as part of the framework.**
+  - If you are unsure whether a function exists, **avoid using it**.
+  - Prefer calling tool-provided helpers (e.g., for connection setup, logging, reading/writing data, etc.)
+
+# Scanning Tree Guidance
+The scanning logic should follow the high-level reasoning structure provided below:
+<ST>
+{ST}
+</ST>
+
+# Output Format
+Please write your final plugin code in the following format:
+<Code>
+[Your plugin implementation]
+</Code>
+
+# Framework Result
+You can use these const as scan result
+zgrab2.SCAN_SUCCESS
+zgrab2.SCAN_CONNECTION_REFUSED
+zgrab2.SCAN_CONNECTION_TIMEOUT
+zgrab2.SCAN_CONNECTION_CLOSED
+zgrab2.SCAN_IO_TIMEOUT
+zgrab2.SCAN_PROTOCOL_ERROR
+zgrab2.SCAN_APPLICATION_ERROR
+zgrab2.SCAN_UNKNOWN_ERROR
+
+# Framework utility
+// ReadAvaiable reads what it can without blocking for more than
+// defaultReadTimeout per read, or defaultTotalTimeout for the whole session.
+// Reads at most defaultMaxReadSize bytes.
+func ReadAvailable(conn net.Conn) ([]byte, error)
+
+// ReadUntilRegex calls connection.Read() until it returns an error, or the cumulatively-read data matches the given regexp
+func ReadUntilRegex(connection net.Conn, res []byte, expr *regexp.Regexp) (int, error) 
